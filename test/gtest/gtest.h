@@ -289,6 +289,10 @@
 //   Int32FromGTestEnv()  - parses an Int32 environment variable.
 //   StringFromGTestEnv() - parses a string environment variable.
 
+#if defined(__MINGW__) || defined(__MINGW32__) && defined(__STRICT_ANSI__)
+# undef __STRICT_ANSI__
+#endif
+
 #include <ctype.h>   // for isspace, etc
 #include <stddef.h>  // for ptrdiff_t
 #include <stdlib.h>
